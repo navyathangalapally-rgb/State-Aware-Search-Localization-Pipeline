@@ -1,10 +1,26 @@
-# State-Aware-Search-and-Localization-Pipeline
-While interning at MediTECH Electronics GmbH, I noticed a common hurdle: doctors and therapists using the BioSphere Infiniti platform had to juggle heavy, static manuals while trying to analyze patient data in real-time. I wanted to make that information as interactive and responsive as the software itself.  
+🎨 abi.css (Frontend Architecture)
+This stylesheet handles the visual presentation of the manuals within the Microsoft WebView2 environment.  
 
-💡 The ProblemThe existing help guides were PDF-style documents. In a clinical setting, every second counts. If a sensor needs calibration, a clinician shouldn't have to scroll through 100 pages of a static file—they need an instant search and a clear UI.  
+Responsive Screenshots: Uses the .standard-screenshot class with max-width: 100% and height: auto to prevent horizontal scrolling on small screens.  
 
-🛠 What I BuiltI engineered a documentation system that lives inside the software using Microsoft WebView2. It’s fast, searchable, and works in three languages.  1. A "Smart" Search EngineInstead of relying on heavy libraries, I wrote a "zero-dependency" search engine in JavaScript.  The Challenge: Standard highlighting can "break" HTML structure.  The Fix: I implemented a state-caching system that remembers the original page, cleans it, and then applies RegEx-based highlights every time you search.  2. Automation for Global UseManual translation is slow and prone to errors. I built a Python pipeline using BeautifulSoup4 that:  Extracts only the technical text for translation into German and Polish.  "Flattens" file paths so the documentation works perfectly on any clinical workstation without broken images.  3. Performance FirstBy refactoring how images were handled—moving away from heavy Base64 encoding—I was able to reduce the memory footprint of the help files by over 80%. This ensures the software stays snappy even on older hospital laptops.  
+Sticky UI: Implements position: sticky for the search header so navigation remains accessible during long scrolls.  
 
-📂 What’s Inside?abi.css: The styling that makes medical screenshots look professional and ensures the search bar stays "stuck" to the top.  search.js: The logic behind the state-aware keyword highlighting.  localize.py: The Python automation script for path repairing and text extraction.  
+Search Visuals: Defines the .highlight class with a yellow background to clearly mark search results.  
 
-🎓 Lessons LearnedThis project taught me that software engineering isn't just about writing code; it's about empathy for the end-user. Seeing how these tools help medical professionals provide better care has solidified my goal to specialize in Automated Systems and Software Engineering.  
+🔍 search.js (Interactive Logic)
+This file executes a "zero-dependency" search engine designed to work locally without external libraries.  
+
+State Preservation: On page load, it captures document.body.innerHTML into originalState to prevent permanent DOM corruption during highlighting.  
+
+RegEx Engine: Uses a global, case-insensitive Regular Expression to identify user keywords.  
+
+Automatic Navigation: Includes a scrollIntoView function that smoothly moves the browser window to the first match found.  
+
+🤖 localize.py (Automation Pipeline)
+A Python script using the BeautifulSoup4 library to automate the transition from English to German and Polish.  
+
+DOM Parsing: Traverses the HTML tree to extract text specifically from <p>, <td>, and <h> tags while ignoring functional attributes.  
+
+Path Flattening: Automatically strips complex relative paths and replaces them with local references, ensuring documentation portability.  
+
+Asset Repair: Identifies <img> tags and re-maps their source attributes to a standardized local images directory.  
