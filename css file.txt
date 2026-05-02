@@ -1,0 +1,38 @@
+/* Standard Screenshot Container */
+.standard-screenshot {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Sticky Search Header */
+#search-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-bottom: 2px solid #0056b3;
+  z-index: 1000;
+}
+
+/* Search Highlight Effect */
+.highlight {
+  background-color: #ffeb3b;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  padding: 8px 15px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
