@@ -1,1 +1,1 @@
-# State-Aware-Search-Localization-Pipeline
+# State-Aware-Search-and-Localization-Pipeline
