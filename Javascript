@@ -1,0 +1,31 @@
+let originalState = "";
+
+window.onload = () => {
+    # 
+    // Capture original DOM to prevent corruption during highlighting
+    originalState = document.body.innerHTML;
+};
+
+function performSearch() {
+    const term = document.getElementById('searchBox').value;
+
+    if (!term || term.length < 3) {
+        document.body.innerHTML = originalState;
+        return;
+    }
+
+    // Restore original content before new search
+    document.body.innerHTML = originalState;
+
+    // Apply Global, Case-Insensitive RegEx
+    const regex = new RegExp(`(${term})`, 'gi');
+    const root = document.getElementById('content-area');
+
+    root.innerHTML = root.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+
+    // Smooth Scroll to first result
+    const firstMatch = document.querySelector('.highlight');
+    if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
