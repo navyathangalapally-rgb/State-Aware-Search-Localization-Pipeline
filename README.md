@@ -1,26 +1,40 @@
-🎨 abi.css (Frontend Architecture)
-This stylesheet handles the visual presentation of the manuals within the Microsoft WebView2 environment.  
+Interactive Documentation System
+A custom automation and search interface for localized technical manuals.
 
-Responsive Screenshots: Uses the .standard-screenshot class with max-width: 100% and height: auto to prevent horizontal scrolling on small screens.  
+Project Overview
+This project solves the challenge of managing and navigating large-scale technical documentation across multiple languages. I built a pipeline that automates the localization of HTML manuals and a lightweight, zero-dependency search engine to make the content instantly accessible within a Microsoft WebView2 environment.
 
-Sticky UI: Implements position: sticky for the search header so navigation remains accessible during long scrolls.  
+What I Built
+1. The Automation Script (localize.py)
+The Problem: Manuals were originally in English with complex, broken image paths.
 
-Search Visuals: Defines the .highlight class with a yellow background to clearly mark search results.  
+The Solution: I wrote a Python script using BeautifulSoup4 to:
 
-🔍 search.js (Interactive Logic)
-This file executes a "zero-dependency" search engine designed to work locally without external libraries.  
+Auto-Extract Text: Scans the HTML structure to extract content from paragraphs, tables, and headers for translation (German/Polish).
 
-State Preservation: On page load, it captures document.body.innerHTML into originalState to prevent permanent DOM corruption during highlighting.  
+Fix Assets: Automatically repairs image links and flattens directory paths so the documentation works perfectly in a local, offline environment.
 
-RegEx Engine: Uses a global, case-insensitive Regular Expression to identify user keywords.  
+2. The Search Engine (search.js)
+The Problem: Standard browser search is often clunky for embedded documentation.
 
-Automatic Navigation: Includes a scrollIntoView function that smoothly moves the browser window to the first match found.  
+The Solution: A "Vanilla JS" search engine that requires no external libraries:
 
-🤖 localize.py (Automation Pipeline)
-A Python script using the BeautifulSoup4 library to automate the transition from English to German and Polish.  
+State Protection: It saves the original page state before searching, allowing the user to clear highlights without refreshing the page.
 
-DOM Parsing: Traverses the HTML tree to extract text specifically from <p>, <td>, and <h> tags while ignoring functional attributes.  
+Smart Navigation: Uses Regular Expressions to find keywords and automatically scrolls the window to the first match found.
 
-Path Flattening: Automatically strips complex relative paths and replaces them with local references, ensuring documentation portability.  
+3. The Interface (abi.css)
+The Goal: A clean, "sticky" UI that feels like a professional desktop application.
 
-Asset Repair: Identifies <img> tags and re-maps their source attributes to a standardized local images directory.  
+Key Features:
+
+Responsive Design: Ensures that large technical screenshots scale down for smaller screens without horizontal scrolling.
+
+Sticky Header: Keeps the search bar visible at all times, even when scrolling through long documents.
+
+Key Technologies
+Languages: Python, JavaScript, CSS3, HTML5
+
+Libraries: BeautifulSoup4 (Python)
+
+Environment: Microsoft WebView2
