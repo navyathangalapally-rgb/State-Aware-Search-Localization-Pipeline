@@ -1,10 +1,10 @@
-##Interactive Documentation System
+## Interactive Documentation System
 A custom automation and search interface for localized technical manuals.
 
-##Project Overview
+## Project Overview
 This project solves the challenge of managing and navigating large-scale technical documentation across multiple languages. I built a pipeline that automates the localization of HTML manuals and a lightweight, zero-dependency search engine to make the content instantly accessible within a Microsoft WebView2 environment.
 
-##What I Built
+## What I Built
 1. The Automation Script (localize.py)
 The Problem: Manuals were originally in English with complex, broken image paths.
 
@@ -32,7 +32,7 @@ Responsive Design: Ensures that large technical screenshots scale down for small
 
 Sticky Header: Keeps the search bar visible at all times, even when scrolling through long documents.
 
-Key Technologies
+## Key Technologies
 Languages: Python, JavaScript, CSS3, HTML5
 
 Libraries: BeautifulSoup4 (Python)
