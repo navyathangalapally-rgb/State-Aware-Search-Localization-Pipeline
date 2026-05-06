@@ -4,7 +4,7 @@ A custom automation and search interface for localized technical manuals.
 ### Project Overview
 This project solves the challenge of managing and navigating large-scale technical documentation across multiple languages. I built a pipeline that automates the localization of HTML manuals and a lightweight, zero-dependency search engine to make the content instantly accessible within a Microsoft WebView2 environment.
 
-## What I Built
+### What I Built
 ### 1. The Automation Script (localize.py)
 The Problem: Manuals were originally in English with complex, broken image paths.
 
@@ -26,7 +26,7 @@ Smart Navigation: Uses Regular Expressions to find keywords and automatically sc
 ### 3. The Interface (abi.css)
 The Goal: A clean, "sticky" UI that feels like a professional desktop application.
 
-## Key Features:
+#### Key Features:
 
 Responsive Design: Ensures that large technical screenshots scale down for smaller screens without horizontal scrolling.
 
