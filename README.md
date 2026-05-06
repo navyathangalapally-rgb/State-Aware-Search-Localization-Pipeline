@@ -26,7 +26,7 @@ Smart Navigation: Uses Regular Expressions to find keywords and automatically sc
 ### 3. The Interface (abi.css)
 The Goal: A clean, "sticky" UI that feels like a professional desktop application.
 
-#### Key Features:
+### Key Features:
 
 Responsive Design: Ensures that large technical screenshots scale down for smaller screens without horizontal scrolling.
 
