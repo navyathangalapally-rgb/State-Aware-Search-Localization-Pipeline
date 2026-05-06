@@ -1,7 +1,7 @@
-## Interactive Documentation System
+# Interactive Documentation System
 A custom automation and search interface for localized technical manuals.
 
-## Project Overview
+### Project Overview
 This project solves the challenge of managing and navigating large-scale technical documentation across multiple languages. I built a pipeline that automates the localization of HTML manuals and a lightweight, zero-dependency search engine to make the content instantly accessible within a Microsoft WebView2 environment.
 
 ## What I Built
@@ -14,7 +14,7 @@ Auto-Extract Text: Scans the HTML structure to extract content from paragraphs, 
 
 Fix Assets: Automatically repairs image links and flattens directory paths so the documentation works perfectly in a local, offline environment.
 
-2. The Search Engine (search.js)
+### 2. The Search Engine (search.js)
 The Problem: Standard browser search is often clunky for embedded documentation.
 
 The Solution: A "Vanilla JS" search engine that requires no external libraries:
@@ -23,7 +23,7 @@ State Protection: It saves the original page state before searching, allowing th
 
 Smart Navigation: Uses Regular Expressions to find keywords and automatically scrolls the window to the first match found.
 
-3. The Interface (abi.css)
+### 3. The Interface (abi.css)
 The Goal: A clean, "sticky" UI that feels like a professional desktop application.
 
 ## Key Features:
@@ -32,7 +32,7 @@ Responsive Design: Ensures that large technical screenshots scale down for small
 
 Sticky Header: Keeps the search bar visible at all times, even when scrolling through long documents.
 
-## Key Technologies
+### Key Technologies
 Languages: Python, JavaScript, CSS3, HTML5
 
 Libraries: BeautifulSoup4 (Python)
