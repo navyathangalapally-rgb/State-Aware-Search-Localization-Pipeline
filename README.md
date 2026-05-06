@@ -5,7 +5,7 @@ A custom automation and search interface for localized technical manuals.
 This project solves the challenge of managing and navigating large-scale technical documentation across multiple languages. I built a pipeline that automates the localization of HTML manuals and a lightweight, zero-dependency search engine to make the content instantly accessible within a Microsoft WebView2 environment.
 
 ## What I Built
-# 1. The Automation Script (localize.py)
+### 1. The Automation Script (localize.py)
 The Problem: Manuals were originally in English with complex, broken image paths.
 
 The Solution: I wrote a Python script using BeautifulSoup4 to:
